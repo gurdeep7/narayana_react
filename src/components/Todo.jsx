@@ -36,11 +36,11 @@ todos:state.todoState.todos
     request()
   },[])
 const addOneTodo =()=>{
-if(oneTodo.task == ""){
+if(oneTodo.task === ""){
     alert("Enter Task")
     return
 }
-if(oneTodo.dateTime == ""){
+if(oneTodo.dateTime === ""){
     alert("Enter Date and Time")
     return
 } 
@@ -56,6 +56,8 @@ localStorage.setItem("todo",JSON.stringify(getTodos.todos));
         completed:false,
     });
 }
+
+// entering values
    const change = (e)=>{
     const {name,value} = e.target;
     setOneTodo({
@@ -66,19 +68,19 @@ localStorage.setItem("todo",JSON.stringify(getTodos.todos));
     
    }
 
-
+//mark completed
    const done=(data)=>{
 dispatch(completeTodo(data))
    }
-
+// remove perticular todo
    const removetodo =(data)=>{
 dispatch(removeTodo(data))
    }
-
+// remove all completed todos
    const removecompletedtodo= ()=>{
        dispatch(removeCompletedTodo())
    }
-
+//remove all todos
    const removeall = ()=>{
        dispatch(removeAll())
    }

@@ -15,6 +15,7 @@ export const Navbar = ({handleDate})=>{
        handleDate(new Date())
         }, 30000);
     },[])
+    // clock update aftefr every 30 seconds
     
     return<>
     <div className="bg-gray-400 w-full h-40">
